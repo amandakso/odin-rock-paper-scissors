@@ -4,10 +4,6 @@ function computerPlay() {
     return options[Math.floor(Math.random()*options.length)];
 };
 
-function playerPlay() {
-    let question= window.prompt("Rock, Paper, or Scissors");
-    return question;
-}
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection.toLowerCase()===computerSelection.toLowerCase()) {
@@ -32,10 +28,15 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 };
+
+function playerPlay() {
+    let question= window.prompt("Rock, Paper, or Scissors");
+    return question;
+}
 const playerSelection= playerPlay();
 const computerSelection= computerPlay();
-console.log(computerSelection);
-console.log(playRound(playerSelection, computerSelection));
+//console.log(computerSelection);
+//console.log(playRound(playerSelection, computerSelection));
 
 let playerScore= 0;
 let computerScore=0;
