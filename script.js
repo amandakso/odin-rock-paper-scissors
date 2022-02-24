@@ -52,8 +52,18 @@ function game() {
         console.log(playerScore);
         console.log(computerScore);
         console.log(tie);
+        console.log(finalResult());
 
     }
+}
+function finalResult() {
+if (playerScore + computerScore + tie===5 && playerScore > computerScore) {
+    return "Congrats! You're the Winner!";
+} else if (playerScore + computerScore + tie===5 && playerScore < computerScore) {
+    return "Sorry, you lost to a computer :(";
+} else if (playerScore + computerScore + tie===5 && playerScore===computerScore){
+    return "It's a draw!";
+}
 }
 game();
 
