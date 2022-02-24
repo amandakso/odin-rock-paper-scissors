@@ -53,11 +53,17 @@ function game() {
         console.log(computerScore);
         console.log(tie);
         console.log(finalResult());
-
+        if (playerScore===3 || computerScore===3) {
+            break;
+        }
     }
 }
 function finalResult() {
-if (playerScore + computerScore + tie===5 && playerScore > computerScore) {
+if (playerScore===3){
+    return "Congrats! You're the Winner";
+} else if (computerScore===3) {
+    return "Sorry, you lost to a computer :(";
+} else if (playerScore + computerScore + tie===5 && playerScore > computerScore) {
     return "Congrats! You're the Winner!";
 } else if (playerScore + computerScore + tie===5 && playerScore < computerScore) {
     return "Sorry, you lost to a computer :(";
