@@ -39,15 +39,8 @@ function game() {
         let playerScore= 0;
         let computerScore=0;
         let tie=0;
-        console.log(playRound(playerSelection, computerSelection));
-        let result= playRound(playerSelection, computerSelection);
-        if (result.includes("Win")) {
-            playerScore++;
-        } else if (result.includes("Lose")) {
-            computerScore++;
-        } else {
-            tie++;
-        }
+        let result=playRound(playerSelection, computerSelection);
+        console.log(result);
 
     }
 }
