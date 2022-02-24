@@ -1,21 +1,17 @@
-let options= ["Rock", "Paper", "Scissors"];
+
 function computerPlay() {
-    return options[Math.floor(Math.random()*options.length)]
+    const options= ["Rock", "Paper", "Scissors"];
+    return options[Math.floor(Math.random()*options.length)];
 };
-console.log(computerPlay());
 
-let question= prompt("Rock, Paper, or Scissors?");
-let userChoice= question.toLowerCase();
-console.log(question);
-console.log(userChoice);
-function userPlay() {
-    if (userChoice === "rock"|| userChoice ==="paper" || userChoice==="scissors") {
-        return userChoice.charAt(0).toUpperCase() + userChoice.slice(1);
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection.toLowerCase()==="rock" && computerSelection==="Paper") {
+        return "You Lose! Paper beats Rock";
     } else {
-        return prompt("Not an option. Try again");
-    }
-}
-console.log(userPlay());
-
-
-
+        return "ARGH";
+    };
+};
+const playerSelection= "rock";
+const computerSelection= computerPlay();
+console.log(computerSelection);
+console.log(playRound(playerSelection, computerSelection));
