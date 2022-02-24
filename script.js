@@ -4,6 +4,11 @@ function computerPlay() {
     return options[Math.floor(Math.random()*options.length)];
 };
 
+function playerPlay() {
+    let question= window.prompt("Rock, Paper, or Scissors");
+    return question;
+}
+
 function playRound(playerSelection, computerSelection) {
     if (playerSelection.toLowerCase()===computerSelection.toLowerCase()) {
         return "It's a tie!";
@@ -27,7 +32,7 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 };
-const playerSelection= "rock";
+const playerSelection= playerPlay();
 const computerSelection= computerPlay();
 console.log(computerSelection);
 console.log(playRound(playerSelection, computerSelection));
@@ -37,7 +42,7 @@ let computerScore=0;
 let tie=0;
 function game() {
     for (i=0; i<5; i++) {
-        const playerSelection= "rock";
+        const playerSelection= playerPlay();
         const computerSelection= computerPlay();
  
         let result=playRound(playerSelection, computerSelection);
