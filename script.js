@@ -32,15 +32,26 @@ const computerSelection= computerPlay();
 console.log(computerSelection);
 console.log(playRound(playerSelection, computerSelection));
 
+let playerScore= 0;
+let computerScore=0;
+let tie=0;
 function game() {
     for (i=0; i<5; i++) {
         const playerSelection= "rock";
         const computerSelection= computerPlay();
-        let playerScore= 0;
-        let computerScore=0;
-        let tie=0;
+ 
         let result=playRound(playerSelection, computerSelection);
         console.log(result);
+        if (result.includes("Win")) {
+            playerScore++;
+        } else if (result.includes("Lose")) {
+            computerScore++;
+        } else {
+            tie++;
+        }
+        console.log(playerScore);
+        console.log(computerScore);
+        console.log(tie);
 
     }
 }
