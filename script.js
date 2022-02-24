@@ -3,7 +3,15 @@ function computerPlay() {
     const options= ["Rock", "Paper", "Scissors"];
     return options[Math.floor(Math.random()*options.length)];
 };
-
+function playerPlay() {
+    let question= window.prompt("Rock, Paper, or Scissors?");
+    while (question.toLowerCase() !=="rock" || question.toLowerCase() !=="paper" || question.toLowerCase() !== "scissors")
+    if (question.toLowerCase()=== "rock" || question.toLowerCase()==="paper" || question.toLowerCase()==="scissors") {
+        return question
+    } else {
+        question= window.prompt("Not an option. Rock, Paper, or Scissors?");
+    }
+}
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection.toLowerCase()===computerSelection.toLowerCase()) {
@@ -29,10 +37,7 @@ function playRound(playerSelection, computerSelection) {
     }
 };
 
-function playerPlay() {
-    let question= window.prompt("Rock, Paper, or Scissors");
-    return question;
-}
+
 const playerSelection= playerPlay();
 const computerSelection= computerPlay();
 //console.log(computerSelection);
