@@ -47,7 +47,7 @@ let playerScore= 0;
 let computerScore=0;
 let tie=0;
 function game() {
-    for (i=0; i<5; i++) {
+    for (;;) {
         const playerSelection= playerPlay();
         const computerSelection= computerPlay();
  
