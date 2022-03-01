@@ -44,11 +44,14 @@ function playRound(playerSelection, computerSelection) {
     let result;
     if (playerSelection==computerSelection) {
         result= "It\'s a tie!";
+        msg.textContent=result;
     } else if (playerSelection=="paper" && computerSelection=="scissors" || playerSelection=="rock" && computerSelection=="paper" || playerSelection=="scissors" && computerSelection=="rock") {
         result= "You Lose!";
+        msg.textContent=result;
         computerScore += 1;
     } else {
         result= "You Win!";
+        msg.textContent=result;
         playerScore += 1;
     }
     console.log(playerSelection);
