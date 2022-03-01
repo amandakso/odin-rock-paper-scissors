@@ -34,6 +34,17 @@ function computerPlay() {
 function playGame(playerSelection) {
     let computerSelection=computerPlay();
     playRound(playerSelection, computerSelection);
+    if (playerScore==5) {
+        msg.textContent="Congrats! You are the Winner!";
+        document.getElementById("rock").disabled=true;
+        document.getElementById("paper").disabled=true;
+        document.getElementById("scissors").disabled=true;
+    } else if (computerScore==5) {
+        msg.textContent="Sorry. You lost to a computer.";
+        document.getElementById("rock").disabled=true;
+        document.getElementById("paper").disabled=true;
+        document.getElementById("scissors").disabled=true;
+    }
 };
 
 function playRound(playerSelection, computerSelection) {
