@@ -46,11 +46,11 @@ function playRound(playerSelection, computerSelection) {
         result= "It\'s a tie!";
         msg.textContent=result;
     } else if (playerSelection=="paper" && computerSelection=="scissors" || playerSelection=="rock" && computerSelection=="paper" || playerSelection=="scissors" && computerSelection=="rock") {
-        result= "You Lose!";
+        result= `You Lose! ${computerSelection.charAt(0).toUpperCase()+computerSelection.slice(1)} beats ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)}`;
         msg.textContent=result;
         computerScore += 1;
     } else {
-        result= "You Win!";
+        result= `You Win! ${playerSelection.charAt(0).toUpperCase()+playerSelection.slice(1)} beats ${computerSelection.charAt(0).toUpperCase()+ computerSelection.slice(1)}`;
         msg.textContent=result;
         playerScore += 1;
     }
