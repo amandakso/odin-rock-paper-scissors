@@ -22,6 +22,10 @@ cScore.textContent="";
 container.appendChild(pScore);
 container.appendChild(cScore);
 
+const reset=document.createElement("button");
+reset.classList.add("reset");
+reset.textContent="Play Again?"
+
 rock.addEventListener("click", () => playGame("rock"));
 paper.addEventListener("click", () => playGame("paper"));
 scissors.addEventListener("click", () => playGame("scissors"));
@@ -39,18 +43,20 @@ function playGame(playerSelection) {
         document.getElementById("rock").disabled=true;
         document.getElementById("paper").disabled=true;
         document.getElementById("scissors").disabled=true;
+        container.appendChild(reset);
     } else if (computerScore==5) {
         msg.textContent="Sorry. You lost to a computer.";
         document.getElementById("rock").disabled=true;
         document.getElementById("paper").disabled=true;
         document.getElementById("scissors").disabled=true;
+        container.appendChild(reset);
     }
 };
 
 function playRound(playerSelection, computerSelection) {
     let result;
     if (playerSelection==computerSelection) {
-        result= "It\'s a tie!";
+        result= `It\'s a tie! Both picked ${playerSelection.charAt(0).toUpperCase()+playerSelection.slice(1)}`;
         msg.textContent=result;
         pScore.textContent=`Player Score: ${playerScore}`;
         cScore.textContent=`Computer Score: ${computerScore}`;
@@ -76,105 +82,4 @@ function playRound(playerSelection, computerSelection) {
 function resetScore() {
     let playerScore=0;
     let computerScore=0;
-}
-
-
-/* const rock=document.querySelector("#rock");
-const paper=document.querySelector("#paper");
-const scissors=document.querySelector("#scissors"); */
-
-
-
-
-/*const choices= ["rock", "paper", "scissors"]
-function playerPlay(num) {
-    let found= choices.find(element => element=num);
-    return found;
-}; */
-
-/*rock.addEventListener("click", () => playerPlay("rock"));
-paper.addEventListener("click", () => playerPlay(1));
-scissors.addEventListener("click", () => playerPlay(2)); */
-
-
-/*
-function playRound(playerSelection, computerSelection) {
-    if (playerSelection.toLowerCase()===computerSelection.toLowerCase()) {
-        return "It's a tie!";
-    } else if (playerSelection.toLowerCase()==="rock") {
-        if (computerSelection==="Paper") {
-            return "You Lose! Paper beats Rock";
-        } else {
-            return "You Win! Rock beats Scissors";
-        }
-    } else if (playerSelection.toLowerCase()==="paper") {
-        if (computerSelection==="Rock") {
-            return "You Win! Paper beats Rock";
-        } else {
-            return "You Lose! Scissors beats Paper";
-        }
-    } else if (playerSelection.toLowerCase()==="scissors") {
-        if (computerSelection==="Rock") {
-            return "You Lose! Rock beats Scissors";
-        } else {
-            return "You Win! Scissors beats Paper";
-        }
-    }
 };
-
-const playerSelection= button.id;
-const computerSelection= computerPlay()
-
-
-console.log(computerSelection); 
-console.log(playerSelection);
-console.log(playerScore);
-console.log(computerScore); */
-//console.log(playRound(playerSelection, computerSelection));
-
-
-
-/*
-
-let playerScore= 0;
-let computerScore=0;
-let tie=0;
-function game() {
-    for (;;) {
-        const playerSelection= playerPlay();
-        const computerSelection= computerPlay();
- 
-        let result=playRound(playerSelection, computerSelection);
-        console.log(result);
-        if (result.includes("Win")) {
-            playerScore++;
-        } else if (result.includes("Lose")) {
-            computerScore++;
-        } else {
-            tie++;
-        }
-        console.log(playerScore);
-        console.log(computerScore);
-        console.log(tie);
-        console.log(finalResult());
-        if (playerScore===3 || computerScore===3) {
-            break;
-        }
-    }
-}
-function finalResult() {
-if (playerScore===3){
-    return "Congrats! You're the Winner";
-} else if (computerScore===3) {
-    return "Sorry, you lost to a computer :(";
-} else if (playerScore + computerScore + tie===5 && playerScore > computerScore) {
-    return "Congrats! You're the Winner!";
-} else if (playerScore + computerScore + tie===5 && playerScore < computerScore) {
-    return "Sorry, you lost to a computer :(";
-} else if (playerScore + computerScore + tie===5 && playerScore===computerScore){
-    return "It's a draw!";
-}
-}
-*/
-
-
