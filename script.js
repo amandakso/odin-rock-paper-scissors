@@ -25,6 +25,11 @@ let playerSelection;
 const rock= document.getElementById("rock");
 const paper=document.getElementById("paper");
 const scissors=document.getElementById("scissors");
+const container=document.querySelector("#container");
+const msg=document.createElement("p");
+msg.classList.add("message");
+msg.textContent="";
+container.appendChild(msg);
 
 rock.addEventListener("click", () => playGame("rock"));
 paper.addEventListener("click", () => playGame("paper"));
@@ -50,6 +55,11 @@ function playRound(playerSelection, computerSelection) {
     console.log(computerSelection);
     console.log(playerScore);
     console.log(computerScore);
+}
+
+function resetScore() {
+    let playerScore=0;
+    let computerScore=0;
 }
 
 
