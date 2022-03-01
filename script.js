@@ -28,7 +28,16 @@ rock.addEventListener("click", () => playGame("rock"));
 paper.addEventListener("click", () => playGame("paper"));
 scissors.addEventListener("click", () => playGame("scissors"));
 
-
+function playRound(playerSelection, computerSelection) {
+    let result;
+    if (playerSelection==computerSelection) {
+        result= "It\'s a tie!";
+    } else if (playerSelection=="paper" && computerSelection=="scissors" || playerSelection=="rock" && computerSelection=="paper" || playerSelection=="scissors" && computerSelection=="rock") {
+        result= "You Lose!"
+    } else {
+        result= "You Win!"
+    }
+}
 
 
 /* const rock=document.querySelector("#rock");
