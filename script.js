@@ -1,6 +1,6 @@
 
 function computerPlay() {
-    const options= ["Rock", "Paper", "Scissors"];
+    const options= ["rock", "paper", "scissors"];
     return options[Math.floor(Math.random()*options.length)];
 };
 //change playerPlay to return correct choice when clicking selected button
@@ -20,20 +20,60 @@ playerSelection= ^console.log;
 
 */
 
-const btn= document.querySelector("#btn");
 
-const rock=document.querySelector("#rock");
-const paper=document.querySelector("#paper");
-const scissors=document.querySelector("#scissors");
+const rock= document.querySelector("rock");
+const paper=document.querySelector("paper");
+const scissors=document.querySelector("scissors");
+let computerSelection= "";
+let playerSelection= "";
 
-const choices= ["rock", "paper", "scissors"]
-function playerPlay(num) {
-    return `${choices[num]}`;
+rock.addEventListener("click", (e) => {
+    playerSelection="rock";
+    showResult();
+});
+paper.addEventListener("click", (e) => {
+    playerSelection="paper";
+    showResult();
+});
+scissors.addEvenetListener("click", (e) => {
+    playerSelection="scissors";
+    showResult();
+});
+
+function showResult() {
+    if (computerSelection==playerSelection) {
+        result= "It's a tie!";
+    } else if (computerSelection=="rock" && playerSelection=="scissors" || computerSelection=="paper" && playerSelection==
+    "rock" || computerSelection=="scissors" && playerSelection=="paper") {
+        result= `You Lose! ${computerSelection} beats ${playerSelection}`;
+    } else { 
+        result= `You win! ${playerSelection} beats ${computerSelection}`;
+    };
+    playRound();
+};
+function playRound() {
+    const computerSelection=computerPlay();
 }
 
-rock.addEventListener("click", () => playerPlay(0));
+
+
+
+/* const rock=document.querySelector("#rock");
+const paper=document.querySelector("#paper");
+const scissors=document.querySelector("#scissors"); */
+
+
+
+
+/*const choices= ["rock", "paper", "scissors"]
+function playerPlay(num) {
+    let found= choices.find(element => element=num);
+    return found;
+}; */
+
+/*rock.addEventListener("click", () => playerPlay("rock"));
 paper.addEventListener("click", () => playerPlay(1));
-scissors.addEventListener("click", () => playerPlay(2));
+scissors.addEventListener("click", () => playerPlay(2)); */
 
 
 /*
@@ -61,14 +101,13 @@ function playRound(playerSelection, computerSelection) {
     }
 };
 
+const playerSelection= button.id; 
+const computerSelection= computerPlay() */
 
-const playerSelection= playerPlay();
-const computerSelection= computerPlay();
-*/
 
 console.log(computerSelection);
 console.log(playerSelection);
-console.log(playRound(playerSelection, computerSelection));
+//console.log(playRound(playerSelection, computerSelection));
 
 
 
