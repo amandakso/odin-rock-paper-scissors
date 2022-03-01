@@ -3,7 +3,8 @@ function computerPlay() {
     const options= ["Rock", "Paper", "Scissors"];
     return options[Math.floor(Math.random()*options.length)];
 };
-function playerPlay() {
+//change playerPlay to return correct choice when clicking selected button
+/* function playerPlay() {
     let question= window.prompt("Rock, Paper, or Scissors?");
     while (question.toLowerCase() !=="rock" || question.toLowerCase() !=="paper" || question.toLowerCase() !== "scissors")
     if (question.toLowerCase()=== "rock" || question.toLowerCase()==="paper" || question.toLowerCase()==="scissors") {
@@ -12,6 +13,29 @@ function playerPlay() {
         question= window.prompt("Not an option. Rock, Paper, or Scissors?");
     }
 }
+*/
+
+/* when player clicks button, console.log (button.id);
+playerSelection= ^console.log;
+
+*/
+
+const btn= document.querySelector("#btn");
+
+const rock=document.querySelector("#rock");
+const paper=document.querySelector("#paper");
+const scissors=document.querySelector("#scissors");
+
+const choices= ["rock", "paper", "scissors"]
+function playerPlay(num) {
+    return `${choices[num]}`;
+}
+
+rock.addEventListener("click", () => playerPlay(0));
+paper.addEventListener("click", () => playerPlay(1));
+scissors.addEventListener("click", () => playerPlay(2));
+
+
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection.toLowerCase()===computerSelection.toLowerCase()) {
@@ -40,8 +64,15 @@ function playRound(playerSelection, computerSelection) {
 
 const playerSelection= playerPlay();
 const computerSelection= computerPlay();
-//console.log(computerSelection);
-//console.log(playRound(playerSelection, computerSelection));
+
+
+console.log(computerSelection);
+console.log(playerSelection);
+console.log(playRound(playerSelection, computerSelection));
+
+
+
+/*
 
 let playerScore= 0;
 let computerScore=0;
@@ -82,5 +113,6 @@ if (playerScore===3){
     return "It's a draw!";
 }
 }
-game();
+*/
+
 
