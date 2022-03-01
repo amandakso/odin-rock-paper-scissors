@@ -19,7 +19,9 @@ function computerPlay() {
 playerSelection= ^console.log;
 
 */
-
+let playerScore= 0;
+let computerScore=0;
+let playerSelection;
 const rock= document.getElementById("rock");
 const paper=document.getElementById("paper");
 const scissors=document.getElementById("scissors");
@@ -28,15 +30,26 @@ rock.addEventListener("click", () => playGame("rock"));
 paper.addEventListener("click", () => playGame("paper"));
 scissors.addEventListener("click", () => playGame("scissors"));
 
+function playGame(playerSelection) {
+    let computerSelection=computerPlay();
+    playRound(playerSelection, computerSelection);
+}
+
 function playRound(playerSelection, computerSelection) {
     let result;
     if (playerSelection==computerSelection) {
         result= "It\'s a tie!";
     } else if (playerSelection=="paper" && computerSelection=="scissors" || playerSelection=="rock" && computerSelection=="paper" || playerSelection=="scissors" && computerSelection=="rock") {
-        result= "You Lose!"
+        result= "You Lose!";
+        computerScore += 1;
     } else {
-        result= "You Win!"
+        result= "You Win!";
+        playerScore += 1;
     }
+    console.log(playerSelection);
+    console.log(computerSelection);
+    console.log(playerScore);
+    console.log(computerScore);
 }
 
 
@@ -87,8 +100,10 @@ const playerSelection= button.id;
 const computerSelection= computerPlay()
 
 
-console.log(computerSelection); */
+console.log(computerSelection); 
 console.log(playerSelection);
+console.log(playerScore);
+console.log(computerScore); */
 //console.log(playRound(playerSelection, computerSelection));
 
 
