@@ -1,64 +1,66 @@
-
-function computerPlay() {
-    const options= ["rock", "paper", "scissors"];
-    return options[Math.floor(Math.random()*options.length)];
-};
-//change playerPlay to return correct choice when clicking selected button
-/* function playerPlay() {
-    let question= window.prompt("Rock, Paper, or Scissors?");
-    while (question.toLowerCase() !=="rock" || question.toLowerCase() !=="paper" || question.toLowerCase() !== "scissors")
-    if (question.toLowerCase()=== "rock" || question.toLowerCase()==="paper" || question.toLowerCase()==="scissors") {
-        return question
-    } else {
-        question= window.prompt("Not an option. Rock, Paper, or Scissors?");
-    }
-}
-*/
-
-/* when player clicks button, console.log (button.id);
-playerSelection= ^console.log;
-
-*/
 let playerScore= 0;
 let computerScore=0;
 let playerSelection;
+
 const rock= document.getElementById("rock");
 const paper=document.getElementById("paper");
 const scissors=document.getElementById("scissors");
+
 const container=document.querySelector("#container");
+
 const msg=document.createElement("p");
 msg.classList.add("message");
 msg.textContent="";
 container.appendChild(msg);
 
+const pScore=document.createElement("p");
+const cScore=document.createElement("p");
+pScore.classList.add("score");
+cScore.classList.add("score");
+pScore.textContent="";
+cScore.textContent="";
+container.appendChild(pScore);
+container.appendChild(cScore);
+
 rock.addEventListener("click", () => playGame("rock"));
 paper.addEventListener("click", () => playGame("paper"));
 scissors.addEventListener("click", () => playGame("scissors"));
 
+function computerPlay() {
+    const options= ["rock", "paper", "scissors"];
+    return options[Math.floor(Math.random()*options.length)];
+};
+
 function playGame(playerSelection) {
     let computerSelection=computerPlay();
     playRound(playerSelection, computerSelection);
-}
+};
 
 function playRound(playerSelection, computerSelection) {
     let result;
     if (playerSelection==computerSelection) {
         result= "It\'s a tie!";
         msg.textContent=result;
+        pScore.textContent=`Player Score: ${playerScore}`;
+        cScore.textContent=`Computer Score: ${computerScore}`;
     } else if (playerSelection=="paper" && computerSelection=="scissors" || playerSelection=="rock" && computerSelection=="paper" || playerSelection=="scissors" && computerSelection=="rock") {
         result= `You Lose! ${computerSelection.charAt(0).toUpperCase()+computerSelection.slice(1)} beats ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)}`;
         msg.textContent=result;
         computerScore += 1;
+        pScore.textContent=`Player Score: ${playerScore}`;
+        cScore.textContent=`Computer Score: ${computerScore}`;
     } else {
         result= `You Win! ${playerSelection.charAt(0).toUpperCase()+playerSelection.slice(1)} beats ${computerSelection.charAt(0).toUpperCase()+ computerSelection.slice(1)}`;
         msg.textContent=result;
         playerScore += 1;
+        pScore.textContent=`Player Score: ${playerScore}`;
+        cScore.textContent=`Computer Score: ${computerScore}`;
     }
     console.log(playerSelection);
     console.log(computerSelection);
     console.log(playerScore);
     console.log(computerScore);
-}
+};
 
 function resetScore() {
     let playerScore=0;
