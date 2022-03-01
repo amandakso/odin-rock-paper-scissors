@@ -36,7 +36,7 @@ paper.addEventListener("click", () => playerPlay(1));
 scissors.addEventListener("click", () => playerPlay(2));
 
 
-
+/*
 function playRound(playerSelection, computerSelection) {
     if (playerSelection.toLowerCase()===computerSelection.toLowerCase()) {
         return "It's a tie!";
@@ -64,7 +64,7 @@ function playRound(playerSelection, computerSelection) {
 
 const playerSelection= playerPlay();
 const computerSelection= computerPlay();
-
+*/
 
 console.log(computerSelection);
 console.log(playerSelection);
