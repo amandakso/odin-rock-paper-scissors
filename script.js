@@ -20,40 +20,13 @@ playerSelection= ^console.log;
 
 */
 
+const rock= document.getElementById("rock");
+const paper=document.getElementById("paper");
+const scissors=document.getElementById("scissors");
 
-const rock= document.querySelector("rock");
-const paper=document.querySelector("paper");
-const scissors=document.querySelector("scissors");
-let computerSelection= "";
-let playerSelection= "";
-
-rock.addEventListener("click", (e) => {
-    playerSelection="rock";
-    showResult();
-});
-paper.addEventListener("click", (e) => {
-    playerSelection="paper";
-    showResult();
-});
-scissors.addEvenetListener("click", (e) => {
-    playerSelection="scissors";
-    showResult();
-});
-
-function showResult() {
-    if (computerSelection==playerSelection) {
-        result= "It's a tie!";
-    } else if (computerSelection=="rock" && playerSelection=="scissors" || computerSelection=="paper" && playerSelection==
-    "rock" || computerSelection=="scissors" && playerSelection=="paper") {
-        result= `You Lose! ${computerSelection} beats ${playerSelection}`;
-    } else { 
-        result= `You win! ${playerSelection} beats ${computerSelection}`;
-    };
-    playRound();
-};
-function playRound() {
-    const computerSelection=computerPlay();
-}
+rock.addEventListener("click", () => playGame("rock"));
+paper.addEventListener("click", () => playGame("paper"));
+scissors.addEventListener("click", () => playGame("scissors"));
 
 
 
@@ -101,11 +74,11 @@ function playRound(playerSelection, computerSelection) {
     }
 };
 
-const playerSelection= button.id; 
-const computerSelection= computerPlay() */
+const playerSelection= button.id;
+const computerSelection= computerPlay()
 
 
-console.log(computerSelection);
+console.log(computerSelection); */
 console.log(playerSelection);
 //console.log(playRound(playerSelection, computerSelection));
 
