@@ -76,9 +76,5 @@ function playRound(playerSelection, computerSelection) {
         pScore.textContent=`Player Score: ${playerScore}`;
         cScore.textContent=`Computer Score: ${computerScore}`;
     }
-    console.log(playerSelection);
-    console.log(computerSelection);
-    console.log(playerScore);
-    console.log(computerScore);
 };
 
