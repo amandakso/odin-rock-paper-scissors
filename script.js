@@ -25,6 +25,7 @@ container.appendChild(cScore);
 const reset=document.createElement("button");
 reset.classList.add("reset");
 reset.textContent="Play Again?"
+reset.addEventListener("click", () => location.reload());
 
 rock.addEventListener("click", () => playGame("rock"));
 paper.addEventListener("click", () => playGame("paper"));
@@ -34,6 +35,7 @@ function computerPlay() {
     const options= ["rock", "paper", "scissors"];
     return options[Math.floor(Math.random()*options.length)];
 };
+
 
 function playGame(playerSelection) {
     let computerSelection=computerPlay();
@@ -52,6 +54,7 @@ function playGame(playerSelection) {
         container.appendChild(reset);
     }
 };
+
 
 function playRound(playerSelection, computerSelection) {
     let result;
@@ -79,7 +82,3 @@ function playRound(playerSelection, computerSelection) {
     console.log(computerScore);
 };
 
-function resetScore() {
-    let playerScore=0;
-    let computerScore=0;
-};
